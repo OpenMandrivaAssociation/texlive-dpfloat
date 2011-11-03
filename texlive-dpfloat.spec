@@ -1,3 +1,9 @@
+# revision 17196
+# category Package
+# catalog-ctan /macros/latex/contrib/dpfloat
+# catalog-date 2010-02-24 00:01:31 +0100
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-dpfloat
 Version:	20100224
 Release:	1
@@ -42,6 +48,7 @@ two floats will appear side-by-side in a two-sided document.
 %doc %{_texmfdistdir}/doc/latex/dpfloat/README
 %doc %{_texmfdistdir}/doc/latex/dpfloat/dpfloat.pdf
 %doc %{_texmfdistdir}/doc/latex/dpfloat/dpfloat.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -52,3 +59,5 @@ two floats will appear side-by-side in a two-sided document.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
