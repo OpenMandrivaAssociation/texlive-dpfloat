@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Provides fullpage and leftfullpage environments, that may be
@@ -27,20 +25,12 @@ first of a 2-page spread uses a "leftfullpage" environment, the
 float will only be typeset on an even-numbered page, and the
 two floats will appear side-by-side in a two-sided document.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -49,7 +39,6 @@ two floats will appear side-by-side in a two-sided document.
 %doc %{_texmfdistdir}/doc/latex/dpfloat/README
 %doc %{_texmfdistdir}/doc/latex/dpfloat/dpfloat.pdf
 %doc %{_texmfdistdir}/doc/latex/dpfloat/dpfloat.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -60,5 +49,3 @@ two floats will appear side-by-side in a two-sided document.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
