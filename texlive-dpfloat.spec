@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-dpfloat
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	Support for double-page floats
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dpfloat
