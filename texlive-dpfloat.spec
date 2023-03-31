@@ -1,6 +1,6 @@
 Name:		texlive-dpfloat
 Version:	17196
-Release:	1
+Release:	2
 Summary:	Support for double-page floats
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dpfloat
