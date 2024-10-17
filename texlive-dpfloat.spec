@@ -3,7 +3,7 @@ Version:	17196
 Release:	2
 Summary:	Support for double-page floats
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dpfloat
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/dpfloat
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dpfloat.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dpfloat.doc.r%{version}.tar.xz
